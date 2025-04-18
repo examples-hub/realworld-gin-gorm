@@ -7,7 +7,7 @@ import (
 )
 
 
-func RegisteMyValidator(app *gin.Engine){
+func RegisterMyValidator(app *gin.Engine){
 	if v, ok := binding.Validator.Engine().(*validator.Validate); ok {
 		v.RegisterValidation("UserIdExist", UserIdExist)
 	}

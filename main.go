@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/examples-hub/realworld-gin-gorm/middleware"
@@ -14,13 +15,14 @@ func main() {
 	// config.InitConfig()
 	models.InitDB()
 
-	r := gin.Default()
+	app := gin.Default()
 
-	middleware.LoadMiddleware(r)
-	validator.RegisteMyValidator(r)
-	router.LoadRouter(r)
+	middleware.LoadMiddleware(app)
+	validator.RegisterMyValidator(app)
+	router.LoadRouter(app)
 
-	r.GET("/ping", func(c *gin.Context) {
+	app.GET("/ping", func(c *gin.Context) {
+		fmt.Println("/ping route ing")
 		c.JSON(http.StatusOK, gin.H{
 			"message": "pong",
 		})
@@ -28,5 +30,5 @@ func main() {
 
 	// addr := viper.GetString("serverAddr")
 	// r.Run(addr)
-	r.Run()
+	app.Run()
 }
