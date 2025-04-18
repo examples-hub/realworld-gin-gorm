@@ -1,0 +1,15 @@
+tmp/*
+gorm.db
+realworld.sqlite
+test.db
+config/config.json
+config-bak
+
+coverage.txt
+
+bak.*
+
+.DS_Store
+Thumbs.db
+
+vendor/*
