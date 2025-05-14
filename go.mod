@@ -2,8 +2,6 @@ module github.com/examples-hub/realworld-gin-gorm
 
 go 1.23.0
 
-toolchain go1.23.2
-
 require (
 	github.com/gin-gonic/gin v1.9.0
 	github.com/go-playground/validator/v10 v10.11.2
